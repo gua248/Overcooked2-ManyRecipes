@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace OC2ManyRecipes
 {
-    [BepInPlugin("dev.gua.overcooked.manyrecipes", "Overcooked2 ManyRecipes Plugin", "1.0")]
+    [BepInPlugin("dev.gua.overcooked.manyrecipes", "Overcooked2 ManyRecipes Plugin", "1.1")]
     [BepInProcess("Overcooked2.exe")]
     public class ManyRecipesPlugin : BaseUnityPlugin
     {

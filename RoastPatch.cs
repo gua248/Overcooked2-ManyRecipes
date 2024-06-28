@@ -27,13 +27,13 @@ namespace OC2ManyRecipes
             LevelConfigBase levelConfig = __instance.GetLevelConfig();
             if (levelConfig == null || levelConfig.m_recipeMatchingList == null) return;
             var oldEntries = levelConfig.GetAllRecipes();
-            if (oldEntries.Find(x => x.name == "BeefPotatoCarrotRoast") == null) return;
+            if (oldEntries.Find(x => x.name.EndsWith("BeefPotatoCarrotRoast")) == null) return;
 
             IngredientOrderNode[] ingredients = ingredientNames.Select(
-                x => (levelConfig.m_recipeMatchingList.m_recipes.FirstOrDefault(r => r.name == x) ?? levelConfig.m_recipeMatchingList.m_includeLists[0].m_recipes.FirstOrDefault(r => r.name == x)) as IngredientOrderNode
+                x => (levelConfig.m_recipeMatchingList.m_recipes.FirstOrDefault(r => r.name == x || r.name == "DLC07_" + x || r.name == "DLC09_" + x) ?? levelConfig.m_recipeMatchingList.m_includeLists[0].m_recipes.FirstOrDefault(r => r.name == x)) as IngredientOrderNode
             ).ToArray();
             instance.oldRecipes = oldRecipeNames.Select(
-                x => levelConfig.m_recipeMatchingList.m_recipes.FirstOrDefault(r => r.name == x)
+                x => levelConfig.m_recipeMatchingList.m_recipes.FirstOrDefault(r => r.name == x || r.name == "DLC09_" + x)
             ).ToArray();
             instance.newRecipes = new CookedCompositeOrderNode[newRecipeData.Length];
             for (int i = 0; i < newRecipeData.Length; i++)
@@ -59,7 +59,7 @@ namespace OC2ManyRecipes
             }
 
             List<RecipeList.Entry> entries = new List<RecipeList.Entry>();
-            int newRecipeCount = oldEntries.Find(x => x.name == "BeefPotatoCarrotBroccoliRoast") == null ? 7 : 9;
+            int newRecipeCount = oldEntries.Find(x => x.name.EndsWith("BeefPotatoCarrotBroccoliRoast")) == null ? 7 : 9;
             for (int i = 0; i < newRecipeCount; i++)
             {
                 RecipeList.Entry entry = new RecipeList.Entry
@@ -102,7 +102,7 @@ namespace OC2ManyRecipes
         {
             "Beef_Roast",
             "Chicken_Roast",
-            "DLC07_Potato",
+            "Potato",
             "Carrot",
             "Broccoli",
         };
