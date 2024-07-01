@@ -2,7 +2,13 @@
 
 ## 安装
 
-1. 安装 BepInEx 5 (x86)（[GitHub](https://github.com/BepInEx/BepInEx/releases) 或 [百度网盘链接](https://pan.baidu.com/s/1G81rpJNwVsJplJi6fD2jPA?pwd=lobe)），解压后拷贝到游戏根目录下
+1. 安装 BepInEx 5：
+
+   Steam 端安装 x86 版本（[GitHub](https://github.com/BepInEx/BepInEx/releases) 或 [百度网盘链接](https://pan.baidu.com/s/1G81rpJNwVsJplJi6fD2jPA?pwd=lobe)）
+
+   Epic 端安装 x64 版本（[GitHub](https://github.com/BepInEx/BepInEx/releases) 或 [百度网盘链接](https://pan.baidu.com/s/1C4UDhK7R9Ei6Eu0B6lQ9Cw?pwd=3lu1)）
+
+   解压后拷贝到游戏根目录下
 
    <div align="center">
        <img src="bepinex.png" width="30%" height="30%" />
@@ -29,7 +35,19 @@
 ## 其他
 
 - 修复中秋月饼、饥饿之夜水果派在烤制完成后搅拌碗中不显示模型的 bug。
+
 - 修复热狗关卡中面包+葱+酱组合不显示模型的 bug。（启用后）
+
 - 修复了部分火锅关卡中某些食材组合用小锅盛出后无法放回大锅的 bug。（启用后）
-- 保留了原有的汉堡容量 bug，海滩 2-3 中出现的三肉汉堡的制作仍需要利用这一 bug。
+
+- 保留了原有的汉堡容量 bug，海滩 2-3 中出现的三肉汉堡的制作仍需要利用这一 bug。（[示例视频](https://www.bilibili.com/video/BV1CT4y1R7mh/?p=2)）
+
+  > #### 容量 bug
+  >
+  > 所有可以盛放其他食材的食材（称为 `皮`）都有这一 bug，如汉堡皮、热狗皮。
+  >
+  > `皮` 有一个总容量上限，以及对每种盛放的其他食材的容量上限。例如在原版游戏中，海滩汉堡的总容量上限为 3，肉容量上限为 2，芝士、生菜、番茄、菠萝容量上限为 1。
+  >
+  > 当厨师拿着 `盘子+食材` 对着放在地上的 `皮+食材` 按放下键时会触发容量 bug，使得超过上限的食材放入 `皮` 中。此时，总容量上限不起作用，未达到上限的单种食材上限不起作用。例如 `盘子+肉+肉` 可以往 `汉堡皮+肉+芝士+生菜` 里放，此时总容量上限 3 和肉容量上限 2 不起作用并被超过；而 `盘子+肉` 不能往 `汉堡皮+肉+肉` 里放，因为此时 `肉` 已经达到容量上限 2，无法触发容量 bug。
+
 - 保留了原有的海滩烧烤中盘子可盛放食材组合列表中多余的一项，即 `蘑菇&菠萝&牛肉&鸡肉`，该组合可盛入盘子中但无模型。
