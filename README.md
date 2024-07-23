@@ -28,7 +28,7 @@
 
 - `Many Recipes - Display More Menus` option only needs to be enabled by the host, and cannot be enabled alone.
 
-  Increases the number of displayed menus from 2~5 to 4~6 (for versus mode from 2~3 to 3~4).
+  Increases the number of displayed menus from 2\~5 to 4\~6 (for versus mode from 2\~3 to 3\~4).
 
 - NOT valid in `Arcade Public`.
 
