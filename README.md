@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Install [BepInEx 5 (x86)](https://github.com/BepInEx/BepInEx/releases) for the game
+1. Install [BepInEx 5](https://github.com/BepInEx/BepInEx/releases) for the game (x86 for Steam, x64 for Epic)
 2. Copy `bin/Release/OC2ManyRecipes.dll` to the game's `BepInEx/plugins/` folder
 
 > ### Compiling
